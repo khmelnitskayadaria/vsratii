@@ -1,5 +1,7 @@
 import telebot
 bot = telebot.TeleBot('1655604294:AAFxRUT-pnpVi3Hji091JhbuG_H83ILoKFY')
+keyboard1 = telebot.types.ReplyKeyboardMarkup()
+keyboard1.row('Фильмы', 'Сериалы')
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -13,6 +15,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['сериал', 'сериалы', 'помощь бота'])
 def send_welcome(message):
     bot.reply_to(message, 'Уйн\nSex education\nCommunity\nFinal space\nЭпизоды\n')
+
 
 # @bot.message_handler(content_types=['text'])
 # def get_text_messages(message):
