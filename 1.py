@@ -6,7 +6,7 @@ keyboard1.row('Фильмы', 'Сериалы')
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    bot.reply_to(message, f'Я бот. Приятно познакомиться, {message.from_user.first_name}')
+    bot.reply_to(message, f'Я бот. Приятно познакомиться, {message.from_user.first_name}', reply_markup=keyboard1)
 
 @bot.message_handler(commands=['фильм', 'фильмы', 'помощь бота'])
 def send_welcome(message):
