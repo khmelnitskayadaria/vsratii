@@ -6,7 +6,7 @@ keyboard1.row('/фильмы', '/сериалы')
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    bot.reply_to(message, f'Я бот. Приятно познакомиться, {message.from_user.first_name}', reply_markup=keyboard1)
+    bot.reply_to(message, reply_markup=keyboard1)
 
 @bot.message_handler(commands=['фильм', 'фильмы', 'помощь бота'])
 def send_film(message):
@@ -17,7 +17,7 @@ def send_tv_show(message):
     bot.reply_to(message, 'Уйн\nSex education\nCommunity\nFinal space\nЭпизоды')
 
 @bot.message_handler(commands=['сохрани фильм', 'сохрани сериал'])
-def send_tv_show(message):
+def save_tv_show(message):
     bot.reply_to(message, f'Сорян, {message.from_user.first_name}, но я даун и у меня деменция')
 
 
