@@ -10,11 +10,13 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['фильм', 'фильмы', 'помощь бота'])
 def send_film(message):
-    bot.reply_to(message, dict('https://youtu.be/1eQgfbtl-jU\nProject California\nAmerican honey\n'))
+    film = list('https://youtu.be/1eQgfbtl-jU\nProject California\nAmerican honey\n')
+    bot.reply_to(message, film)
 
 @bot.message_handler(commands=['сериал', 'сериалы', 'помощь бота'])
 def send_tv_show(message):
-    bot.reply_to(message, dict('Уйн\nSex education\nCommunity\nFinal space\nЭпизоды\n'))
+    tv_show = list('Уйн\nSex education\nCommunity\nFinal space\nЭпизоды\n')
+    bot.reply_to(message, tv_show)
 
 
 
