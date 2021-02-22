@@ -1,7 +1,7 @@
 import telebot
 bot = telebot.TeleBot('1655604294:AAFxRUT-pnpVi3Hji091JhbuG_H83ILoKFY')
-keyboard1 = telebot.types.ReplyKeyboardMarkup()
-keyboard1.row('Фильмы', 'Сериалы')
+keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard1.row('/фильмы', '/сериалы')
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -9,12 +9,14 @@ def send_welcome(message):
     bot.reply_to(message, f'Я бот. Приятно познакомиться, {message.from_user.first_name}', reply_markup=keyboard1)
 
 @bot.message_handler(commands=['фильм', 'фильмы', 'помощь бота'])
-def send_welcome(message):
-    bot.reply_to(message, 'https://youtu.be/1eQgfbtl-jU\nProject California\nAmerican honey\n')
+def send_film(message):
+    bot.reply_to(message, dict('https://youtu.be/1eQgfbtl-jU\nProject California\nAmerican honey\n'))
 
 @bot.message_handler(commands=['сериал', 'сериалы', 'помощь бота'])
-def send_welcome(message):
-    bot.reply_to(message, 'Уйн\nSex education\nCommunity\nFinal space\nЭпизоды\n')
+def send_tv_show(message):
+    bot.reply_to(message, dict('Уйн\nSex education\nCommunity\nFinal space\nЭпизоды\n'))
+
+
 
 
 # @bot.message_handler(content_types=['text'])
